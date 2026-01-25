@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<head>
+    <!-- 设置网页标题 -->
+    <title>二次元交流中心</title>
+    <!--保证输入中文也不会乱码-->
+    <meat charset="utf-8">
+
+    <!-- 告诉他style文件在static文件夹里，url_for函数会帮我们生成正确的路径，不需要手动写static/style.css -->
+    <link rel="stylesheet" href={{ url_for('static', filename='style.css') }}>
+</head>
+
+<!--只有Body的代码会真正显示在网站上-->
+<body>
+    <!-- 网页的标题，一把网页只用一个h1-->
+    <h1>dev server demo1!</h1>
+    <p>model from OpenAI!</p>
+    <!-- 输入框和按钮 -->
+    <h2>问个问题？try to ask a question? </h2>
+    <input type="text" id="questionInput" placeholder="enter question here..">
+    <!-- 点击按钮时会调用askQuestion函数 -->
+    <button onclick="askQuestion()">发什么呆还不快问？Ask?</button>
+    <p id="status"></p>
+    <div id="answerOutput"></div>
+    <!-- 告诉他script文件在static文件夹里 -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+    <button onclick="clearQuestion()">清空! clear!</button>
+
+
+</body> 
+</html>
